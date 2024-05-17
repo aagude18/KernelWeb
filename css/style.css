@@ -535,6 +535,11 @@ mark,
   height: auto;
 }
 
+.img-fluid_footer {
+  max-width: 110%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
