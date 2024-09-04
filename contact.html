@@ -105,7 +105,7 @@
                 <div class="col-md-7">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form action="contact.php" method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="control-group">
@@ -128,8 +128,8 @@
                                 <textarea class="form-control" rows="5" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Por favor, ingresa tu mensaje"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <button>
-                                <a href="URL_DE_LA_PAGINA_DE_DESTINO" target="_blank" style="text-decoration: none; color: inherit;">
+                            <button type="submit">
+                                <a style="text-decoration: none; color: inherit;">
                                     <span>Enviar Mensaje</span>
                                 </a>
                             </button>                            

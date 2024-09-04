@@ -1,20 +1,35 @@
 <?php
-if(empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-  http_response_code(500);
-  exit();
+// Configuración básica (ajusta según tu servidor)
+$to = 'support@kernelsystem.net';
+$from = 'kernelsystemsas@gmail.com';
+
+// Sanitización más robusta utilizando filter_var_array
+$input = filter_var_array($_POST, FILTER_SANITIZE_STRING);
+
+// Extraer datos del formulario
+$name = $input['name'];
+$email = $input['email'];
+$subject = $input['subject'];
+$message = $input['message'];
+
+// Crear el mensaje del correo
+$body = "Nuevo mensaje desde tu sitio web.\n\n"
+       . "Nombre: $name\n"
+       . "Correo electrónico: $email\n\n"
+       . "Mensaje:\n"
+       . $message;
+
+// Encabezados del correo (ajusta según tu configuración)
+$headers = "From: $from\n";
+$headers .= "Reply-To: $email\n";
+$headers .= "MIME-Version: 1.0\n";
+$headers .= "Content-type: text/plain; charset=utf-8\n";
+
+// Enviar el correo
+if (mail($to, $subject, $body, $headers)) {
+    // Correo enviado correctamente
+    echo '¡Mensaje enviado con éxito!';
+} else {
+    // Error al enviar el correo
+    echo 'Lo sentimos, ocurrió un error al enviar tu mensaje.';
 }
-
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email = strip_tags(htmlspecialchars($_POST['email']));
-$m_subject = strip_tags(htmlspecialchars($_POST['subject']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
-
-$to = "info@example.com"; // Change this email to your //
-$subject = "$m_subject:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
-$header = "From: $email";
-$header .= "Reply-To: $email";	
-
-if(!mail($to, $subject, $body, $header))
-  http_response_code(500);
-?>
