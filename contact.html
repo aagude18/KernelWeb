@@ -42,8 +42,8 @@
                         <a href="index.html" class="nav-item nav-link">Inicio</a>
                         <a href="about.html" class="nav-item nav-link">Nosotros</a>
                         <a href="service.html" class="nav-item nav-link">Servicios</a>
-                        <a href="pricing.html" class="nav-item nav-link">Precios</a>
-                        <!--div class="nav-item dropdown">
+                        <!--a href="pricing.html" class="nav-item nav-link">Precios</a>
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
                                 <a href="blog.html" class="dropdown-item">Blog Grid</a>
@@ -79,14 +79,16 @@
                 <h1 class="mt-2 mb-5">Contáctanos para cualquier consulta</h1>
             </div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4"> <!-- Cambié col-md-5 a col-md-4 para tres columnas -->
                     <div class="d-flex align-items-center border mb-3 p-4">
                         <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
                         <div class="d-flex flex-column">
                             <h5 class="font-weight-bold">Nuestra Oficina</h5>
-                            <p class="m-0">Trasv. 54 # 95-46, Cartagena, Colombia</p>
+                            <p class="m-0">Trasv. 54 # 95-46, Cartagena, Col.</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4"> <!-- Segunda columna -->
                     <div class="d-flex align-items-center border mb-3 p-4">
                         <i class="fa fa-2x fa-envelope-open text-primary mr-3"></i>
                         <div class="d-flex flex-column">
@@ -94,15 +96,20 @@
                             <p class="m-0">kernelsystemsas@gmail.com</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4"> <!-- Tercera columna -->
                     <div class="d-flex align-items-center border mb-3 mb-md-0 p-4">
                         <i class="fas fa-2x fa-phone-alt text-primary mr-3"></i>
                         <div class="d-flex flex-column">
-                            <h5 class="font-weight-bold">Llamanos</h5>
+                            <h5 class="font-weight-bold">Llámanos</h5>
                             <p class="m-0">+57 3043180264</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7">
+            </div>
+        </div>
+    </div>
+                <!--div class="col-md-7">
                     <div class="contact-form">
                         <div id="success"></div>
                         <form action="contact.php" method="post" name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -135,7 +142,7 @@
                             </button>                            
                         </form>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
     </div>
